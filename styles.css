@@ -1,0 +1,232 @@
+/* Estilo general */
+body {
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Menú lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background: linear-gradient(180deg, #1a1a3d, #2e1a47);
+    border-right: 2px solid #00ffcc;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+    padding-top: 20px;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border: 3px solid #ff00ff;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffcc;
+}
+
+.nav-link {
+    color: #00ffcc;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ff00ff;
+    background-color: rgba(255, 0, 255, 0.1);
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+/* Contenido principal */
+.content {
+    padding-top: 20px;
+}
+
+.section {
+    min-height: 100vh;
+    padding: 40px;
+    background: linear-gradient(45deg, #1a1a3d, #0d0d0d);
+    border-bottom: 1px solid #00ffcc;
+}
+
+.section h1 {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffcc;
+}
+
+/* Texto cyberpunk */
+.cyber-text {
+    color: #00ffcc;
+    font-size: 16px;
+    line-height: 1.6;
+    text-shadow: 0 0 5px #00ffcc;
+}
+
+/* Subtítulos */
+.sub-title {
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc;
+    margin-bottom: 20px;
+}
+
+/* Estilo de las tarjetas */
+.cyber-card {
+    background-color: #1a1a3d;
+    border: 2px solid #00ffcc;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: neon-flicker 2s infinite;
+}
+
+.cyber-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.6);
+}
+
+/* Efecto de parpadeo neón */
+@keyframes neon-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        border-color: #00ffcc;
+        box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+    }
+    20%, 24%, 55% {
+        border-color: rgba(0, 255, 204, 0.2);
+        box-shadow: 0 0 5px rgba(0, 255, 204, 0.1);
+    }
+}
+
+/* Logos de instituciones */
+.institution-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+/* Títulos y texto de las tarjetas */
+.card-title {
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff;
+    position: relative;
+    display: inline-block;
+}
+
+
+@keyframes glitch {
+    0% { opacity: 0; }
+    20% { opacity: 0.8; }
+    40% { opacity: 0; }
+    60% { opacity: 0.8; }
+    100% { opacity: 0; }
+}
+
+.card:nth-child(2) .card-title::before,
+.card:nth-child(2) .card-title::after {
+    content: 'Proyecto DUOC UC';
+}
+
+
+/* Texto de la tarjeta */
+.card-text {
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+/* Botón cyberpunk */
+.btn-cyber {
+    background-color: transparent;
+    border: 2px solid #ff00ff;
+    color: #ff00ff;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    animation: neon-flicker 1.5s infinite;
+}
+
+.btn-cyber:hover {
+    background-color: #ff00ff;
+    color: #0d0d0d;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+/* Estilos del portafolio */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+}
+
+.card-img-top::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 255, 204, 0.3) 50%,
+        transparent 100%
+    );
+    animation: scan 3s infinite;
+}
+
+@keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Etiquetas de tecnologías */
+.tech-tags .badge {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 5px currentColor; }
+    50% { box-shadow: 0 0 15px currentColor; }
+    100% { box-shadow: 0 0 5px currentColor; }
+}
+
+/* Colores para cada tecnología */
+.bg-c { background-color: #00599c; }
+.bg-cpp { background-color: #00599c; }
+.bg-python { background-color: #3776ab; }
+.bg-java { background-color: #f89820; }
+.bg-html { background-color: #e34c26; }
+.bg-css { background-color: #264de4; }
+.bg-js { background-color: #f0db4f; color: #000; }
+.bg-oracle { background-color: #f80000; }
+.bg-mysql { background-color: #00758f; }
+.bg-ionic { background-color: #3880ff; }
+.bg-angular { background-color: #dd0031; }
+.bg-django { background-color: #092e20; }
+.bg-nodejs { background-color: #3c873a; }
+.bg-bootstrap { background-color: #563d7c; }
+.bg-vscode { background-color: #007acc; }
+.bg-netbeans { background-color: #1b6ac6; }
+.bg-excel { background-color: #217346; }
+
+/* Responsividad */
+@media (max-width: 767.98px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid #00ffcc;
+    }
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
